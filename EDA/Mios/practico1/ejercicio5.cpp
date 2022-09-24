@@ -32,3 +32,21 @@ listagral TailLG(listagral lg){
 // Pre: lg no vacía.
 	return lg->sig;
 }
+
+int LengthLG(listagral lg){
+// Retorna la cantidad de naturales de la lista general lg. (recursiva)
+	
+	if(IsEmptyLG(lg))
+		return 0;
+	else 
+		return Length(HeadLG(lg)) + LengthLG(TailLG(lg));
+
+}
+
+void ShowLG(listagral lg){
+// Muestra la lista general separando los naturales y listas de naturales por comas y
+// encerrando cada lista de naturales entre paréntesis.
+
+	
+
+}
