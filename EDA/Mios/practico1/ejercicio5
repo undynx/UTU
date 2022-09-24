@@ -1,0 +1,34 @@
+listagral NullLG(){
+// Crea la lista general vacía
+	return NULL;
+}
+
+listagral ConsLG(listagral lg, lista l){
+// Inserta la lista elemento l al principio de la lista general lg.
+
+	listagral nueva_lg = new(nodo_listagral);
+	nueva_lg->dato = l;
+	nueva_lg->sig = lg;
+	return nueva_lg;
+
+}
+
+bool IsEmptyLG(listagral lg){
+// Verifica si la lista general está vacía.
+	if(lg == NULL)
+		return true;
+	else
+		return false;
+}
+
+lista HeadLG(listagral lg){
+// Retorna la primer lista elemento.
+// Pre: lg no vacía.
+	return lg->dato;
+}
+
+listagral TailLG(listagral lg){
+// Retorna lg sin su primer elemento.
+// Pre: lg no vacía.
+	return lg->sig;
+}

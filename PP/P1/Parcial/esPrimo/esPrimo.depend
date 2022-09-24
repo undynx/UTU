@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1651447769 source:c:\users\admin\desktop\principios de la programacion - ejercicios\parcial\esprimo\main.c
+	<stdio.h>
+	<stdlib.h>
+

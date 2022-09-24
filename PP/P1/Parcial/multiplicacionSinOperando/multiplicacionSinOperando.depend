@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1651502031 source:c:\users\admin\desktop\principios de la programacion - ejercicios\parcial\multiplicacionsinoperando\main.c
+	<stdio.h>
+	<stdlib.h>
+

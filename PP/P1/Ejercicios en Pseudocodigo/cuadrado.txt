@@ -1,0 +1,22 @@
+Inicio {
+
+	variable entera asteriscos­Hor
+	asteriscosHor = 0
+
+	variable entera asteriscosVer
+	asteriscosVer = 0
+
+	MIENTRAS (asteriscosVer < 5) {
+
+		MIENTRAS (asteriscosHor < 5) {
+		imprimir "*"
+		asteriscosHor + 1
+		}
+	
+	imprimir /n
+	asteriscosVer + 1
+	asteriscosHor = 0
+
+	}
+
+} Fin

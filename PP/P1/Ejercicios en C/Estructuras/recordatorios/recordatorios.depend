@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1656181564 source:c:\users\admin\proyectosgit\principios de la programacion - ejercicios\ejercicios en c\estructuras\recordatorios\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+

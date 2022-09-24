@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1654553485 source:c:\users\admin\proyectosgit\principios de la programacion - ejercicios\ejercicios en c\funciones\semana\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+

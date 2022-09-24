@@ -1,0 +1,11 @@
+Inicio {
+	variable entera asteriscos­
+	asteriscos = 0
+
+	MIENTRAS (asteriscos < 200) {
+		imprimir `*`
+		imprimir /n
+		asteriscos + 1
+	}
+
+} Fin

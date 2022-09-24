@@ -1,0 +1,30 @@
+Inicio {
+
+	variable entera numero, div, cantidadDiv
+	
+	imprimir "Ingresá un n᠓mero mayor a 0"
+	leer numero 
+
+	div = 1
+	cantidadDiv = 0
+
+	MIENTRAS(numero<=div) {
+		
+		SI(numero%div == 0) {
+			cantidadDiv = cantidadDiv + 1
+			imprimir "${div} es divisor de ${numero}"
+		}
+	
+		div = div +1
+
+	}
+
+	SI(cantidadDiv==2) {
+		
+		imprimir "${numero} es primo"
+
+	} SINO {
+
+		imprimir "${numero} no es primo"
+
+	}

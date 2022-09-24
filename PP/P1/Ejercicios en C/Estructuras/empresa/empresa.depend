@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1655938662 source:c:\users\admin\proyectosgit\principios de la programacion - ejercicios\ejercicios en c\empresa\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+

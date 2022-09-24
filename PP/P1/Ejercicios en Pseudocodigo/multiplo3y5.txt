@@ -1,0 +1,23 @@
+Inicio {
+
+	variable entera multiplo3y5
+	imprimir "ingresa un valor"
+	leer multiplo3y5
+
+	SI (multiplo3y5 % 3 == 0) {
+
+		SI (multiplo3y5 % 5 == 0) {
+			imprimir "'multiplo3y5' es multiplo de 5 y 3"
+		} SINO {
+			imprimir "'multiplo3y5' es multiplo de 3"
+		}
+	
+	} SINO {
+
+		SI (multiplo3y5 % 5 == 0) { 
+			imprimir "'multiplo3y5' es multiplo de 5"
+		} SINO {
+			imprimir "'multiplo3y5' no es multiplo de 5 ni de 3"
+		}
+
+} Fin

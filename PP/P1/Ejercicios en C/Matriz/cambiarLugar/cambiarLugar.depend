@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1654367676 source:c:\users\admin\proyectosgit\principios de la programacion - ejercicios\ejercicios en c\matriz\cambiarlugar\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+

@@ -1,0 +1,19 @@
+Inicio {
+
+	variable entera factorOriginal
+	variable entera multiplicador
+	variable entera total
+
+	imprimir "ingresa dos valores"
+	leer factorOriginal
+	leer multiplicador
+	total = factorOriginal
+
+	MIENTRAS (multiplicador > 1) {
+		total = total + factorOriginal
+		multiplicador = multiplicador - 1
+	}
+
+	imprimir total;
+
+} Fin
