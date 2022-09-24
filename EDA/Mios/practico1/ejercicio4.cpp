@@ -1,4 +1,5 @@
-/* Dada la siguiente definición del TAD Lista:
+/* Dada la siguiente definición del TAD Lista, implementar las siguientes 
+operaciones recursivamente (sin acceder a la representacion interna)
 
 lista Null();
 // Crea la lista vacía.
@@ -15,7 +16,7 @@ int Head(lista l);
 
 lista Tail(lista l);
 // Retorna la lista sin su primer elemento.
-// Pre: l no vacía.*/
+// Pre: l no vacía. */
 
 bool IsElement(int x, lista l){
 // Retorna true si x pertenece a l, false en caso contrario.
@@ -67,8 +68,16 @@ bool Equals(lista l, lista p){
 	return iguales;
 }
 
-void Show(lista l);
+void Show(lista l){
 // Muestra los elementos de la lista l separados por comas.
+	if(!isEmpty(l)){
+		cout << Head(l);
+		if(!isEmpty(Tail(l))){
+			cout << ", "
+			Show(Tail(l));
+		}
+	}
+}
 
 lista Remove(int x, lista l);
 // Retorna la lista fruto de eliminarx en l.
