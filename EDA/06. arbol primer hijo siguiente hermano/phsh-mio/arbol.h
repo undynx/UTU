@@ -4,7 +4,7 @@
 // Estructuras de Datos y Algoritmos
 // Tecnologo en Informatica FIng - DGETP - UTEC
 //
-// anario.h
+// arbol.h
 // Arbol Primer Hijo, Siguiente Hermano
 
 #include <unistd.h>
@@ -41,12 +41,6 @@ bool arbol_ins (arbol & a, char * path);
 bool arbol_vacio (arbol a);
 // Retorna true si a es vacio, false caso contrario.
 
-int arbol_cantidad (arbol a);
-//Retorna la cantidad de a 
-
-int maximo(int x, int y);
-//Retorna el maximo de x e y
-
 int arbol_profundidad (arbol a);
 // Retorna la profundidad de a.
 
@@ -54,9 +48,6 @@ bool arbol_pertenece (arbol a, int e);
 // Retorna true si e pertenece a a.
 
 void arbol_imprimir_tree (arbol a);
-// Imprime el arbol tabulado.
-
-void arbol_imprimir_tree_aux (arbol a, int guiones);
 // Imprime el arbol tabulado.
 
 void arbol_imprimir_nivel (arbol a, int nivel);

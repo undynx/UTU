@@ -1,0 +1,27 @@
+crear
+vacio
+insertar 2
+insertar 1
+insertar 1.3
+insertar 1.2
+insertar 1.2.2
+insertar 1.2.1
+insertar 1.1
+insertar 3.1
+insertar 2.1
+insertar 4.2
+insertar 3.1.2
+insertar 3.2.1
+insertar 1.2.2.3.4
+profundidad
+imprimir
+imprimirniveles
+imprimirnivel 0
+imprimirnivel 1
+imprimirnivel 2
+imprimirnivel 3
+imprimirnivel 4
+pertenece 2
+pertenece 27
+vacio
+salir
