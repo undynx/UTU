@@ -105,8 +105,12 @@ int Last(lista l){
 int HowMany(int x, lista l);
 // Cuenta las ocurrencias del natural x en la lista l
 
-bool IsSorted(lista l);
+bool IsSorted(lista l){
 // Retorna true si l está ordenada, false en caso contrario.
+
+  	
+	
+}
 
 lista Change(int x, int y, lista l);
 // Retorna una nueva lista fruto de cambiar x por y en l.
