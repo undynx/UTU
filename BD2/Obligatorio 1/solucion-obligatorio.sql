@@ -70,11 +70,9 @@ WHERE mis.saga_id = mis2.saga_id AND referencia.id <> referenciada.id;
 /* CONSULTA 8.
 Devolver para cada saga, los actores que participaron de todas sus películas */
 SELECT p.id, p.name
-FROM people AS p
-INNER JOIN (
+FROM people AS p INNER JOIN (
     SELECT mc.person_id, mis.saga_id, COUNT(DISTINCT mis.movie_id) AS num_movies
-    FROM movie_in_saga AS mis
-    INNER JOIN casts AS mc ON mis.movie_id = mc.movie_id
+    FROM movie_in_saga AS mis INNER JOIN casts AS mc ON mis.movie_id = mc.movie_id
     WHERE mc.job_id = (SELECT id FROM jobs WHERE name = 'Actor')
     GROUP BY mc.person_id, mis.saga_id
     HAVING COUNT(DISTINCT mis.movie_id) = (
@@ -92,33 +90,27 @@ conjunto con el nombre de la película de la que participaron, para las películ
 de 8 personas en su elenco. */
 
 
-/*CONSULTA 10.
+
+/*CONSULTA 10 Mei
 Para cada película (devolver su nombre), devolver la edad de la persona más joven
 que participó en la misma y el nombre del trabajo que realizó.*/
-SELECT movies.name, people.name, (CURDATE() - people.birthdate) Edad
-	FROM movies 
-		JOIN casts ON movies.id = casts.movie_id 
-		JOIN people ON casts.person_id = people.id
-GROUP BY movies.id
-HAVING (CURDATE() - people.birthdate) <= ALL (SELECT (CURDATE() - p2.birthdate) Edad
-	FROM movies m2
-		JOIN casts c2 ON m2.id = c2.movie_id 
-		JOIN people p2 ON c2.person_id = p2.id
-		GROUP BY m2.id)
-;
-
-
+SELECT m1.name, people.name, timestampdiff(YEAR, people.birthdate, curdate()) as Edad, casts.role
+FROM movies as m1 join casts on m1.id = casts.movie_id
+	join people on casts.person_id = people.id
+WHERE timestampdiff(YEAR, people.birthdate, curdate()) = (SELECT MIN(timestampdiff(YEAR, p2.birthdate, curdate()))
+															FROM movies as m2 join casts as c2 on m2.id = c2.movie_id
+																join people as p2 on c2.person_id = p2.id
+															WHERE m1.name = m2.name);
+                                                            
+ 
 /* CONSULTA 11. 
 Devolver el nombre de todas las mujeres que participaron en una única película en el 
 año 2015. Se debe retornar además el nombre de la película en la que participaron y el 
 trabajo que hicieron en la misma */
-SELECT people.name as NombreActriz, movies.name as nombrePeli, jobs.name as TrabajoRealizado FROM
-	people 
-		JOIN casts ON people.id = casts.person_id
-        JOIN jobs ON casts.job_id = jobs.id
-        JOIN movies ON casts.movie_id = movies.id
-        WHERE 
-			YEAR(movies.date) = '2015'  
-            AND people.gender = 1
-		GROUP BY people.name, movies.name, jobs.name
-        HAVING COUNT(*) = 1;
+SELECT people.name as NombreActriz, movies.name as nombrePeli, jobs.name as TrabajoRealizado 
+FROM people JOIN casts ON people.id = casts.person_id
+	JOIN jobs ON casts.job_id = jobs.id
+	JOIN movies ON casts.movie_id = movies.id
+WHERE YEAR(movies.date) = '2015'  AND people.gender = 1
+GROUP BY people.name, movies.name, jobs.name
+HAVING COUNT(*) = 1;
