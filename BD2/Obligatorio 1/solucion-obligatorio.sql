@@ -88,12 +88,18 @@ ORDER BY q.saga_id, p.name;
 Devolver la edad de todas las personas que participaron en alguna película, en
 conjunto con el nombre de la película de la que participaron, para las películas con más
 de 8 personas en su elenco. */
+SELECT people.name, movies.name, timestampdiff(YEAR, people.birthdate, curdate()) as Edad
+FROM casts JOIN movies ON casts.movie_id = movies.id
+	JOIN people ON casts.person_id = people.id
+WHERE (SELECT COUNT(*) 
+		FROM casts 
+        WHERE casts.movie_id = movies.id) > 8;
 
 
 
-/*CONSULTA 10 Mei
+/*CONSULTA 10
 Para cada película (devolver su nombre), devolver la edad de la persona más joven
-que participó en la misma y el nombre del trabajo que realizó.*/
+que participó en la misma y el nombre del trabajo que realizó. */
 SELECT m1.name, people.name, timestampdiff(YEAR, people.birthdate, curdate()) as Edad, casts.role
 FROM movies as m1 join casts on m1.id = casts.movie_id
 	join people on casts.person_id = people.id
