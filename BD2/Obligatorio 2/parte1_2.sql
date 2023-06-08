@@ -1,6 +1,7 @@
 /* TO DO: 
 	* Preguntarle al profe por qué al disparar una signal no se inserta en la tabla inconsist_r3
     * Hacer el trigger para cuando se hace un update
+    * https://dev.mysql.com/doc/refman/8.0/en/signal.html#signal-effects
 */
 
 CREATE TABLE inconsist_r3(
